@@ -1,6 +1,8 @@
+
+
 // assets
 import { IconKey } from '../../node_modules/@tabler/icons-react';
-import FolderCopyIcon from '@mui/icons-material/FolderCopy';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 // constant
 const icons = {
     IconKey
@@ -8,17 +10,17 @@ const icons = {
 
 // ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
 
-const pages = {
-    id: 'pages',
-    title: 'Master data',
-    caption: 'Master Data Management',
+const reports = {
+    id: 'reports',
+    title: 'reports',
+    caption: 'Works reports Management',
     type: 'group',
     children: [
         {
-            id: 'authentication',
-            title: 'Data management',
+            id: 'reports',
+            title: 'lists reports',
             type: 'collapse',
-            icon: FolderCopyIcon,
+            icon: AssessmentIcon,
 
             children: [
              /*   {
@@ -36,22 +38,33 @@ const pages = {
                     target: true
                 } */
                 {
-                    id: 'masterDataCompany',
-                    title: 'Company',
+                    id: 'repDayly',
+                    title: 'Dayly reports',
                     type: 'item',
-                    url: '/master/dataGridCompany',
+                    url: '/master/dataGridDayliReport',
+                    icon: icons.IconDashboard,
+                    breadcrumbs: false
+                },
+
+                
+                {
+                    id: 'mrepWeekly',
+                    title: 'weekly reports',
+                    type: 'item',
+                    url: '/master/dataGridDayliReport',
                     icon: icons.IconDashboard,
                     breadcrumbs: false
                 },
 
                    {
-                    id: 'masterDataJobsType',
-                    title: 'Jobs Types',
+                    id: 'reoMonthly',
+                    title: 'monthly reports',
                     type: 'item',
-                    url: '/master/dataGridCompany',
+                    url: '/master/dataGridDayliReport',
                     icon: icons.IconDashboard,
                     breadcrumbs: false
                 },
+
 
                      
 
@@ -60,4 +73,4 @@ const pages = {
     ]
 };
 
-export default pages;
+export default reports;

@@ -1,24 +1,27 @@
+
+
 // assets
 import { IconKey } from '../../node_modules/@tabler/icons-react';
-import FolderCopyIcon from '@mui/icons-material/FolderCopy';
+import TaskIcon from '@mui/icons-material/Task';
 // constant
 const icons = {
     IconKey
+
 };
 
 // ==============================|| EXTRA PAGES MENU ITEMS ||============================== //
 
-const pages = {
-    id: 'pages',
-    title: 'Master data',
-    caption: 'Master Data Management',
+const operation = {
+    id: 'operations',
+    title: 'Operations',
+    caption: 'Works operations',
     type: 'group',
     children: [
         {
-            id: 'authentication',
-            title: 'Data management',
+            id: 'operation',
+            title: 'Operations to do',
             type: 'collapse',
-            icon: FolderCopyIcon,
+            icon: TaskIcon,
 
             children: [
              /*   {
@@ -36,22 +39,14 @@ const pages = {
                     target: true
                 } */
                 {
-                    id: 'masterDataCompany',
-                    title: 'Company',
+                    id: 'formsOperation',
+                    title: 'sign works register',
                     type: 'item',
-                    url: '/master/dataGridCompany',
+                    url: '/master/dataGridOperation',
                     icon: icons.IconDashboard,
                     breadcrumbs: false
                 },
 
-                   {
-                    id: 'masterDataJobsType',
-                    title: 'Jobs Types',
-                    type: 'item',
-                    url: '/master/dataGridCompany',
-                    icon: icons.IconDashboard,
-                    breadcrumbs: false
-                },
 
                      
 
@@ -60,4 +55,4 @@ const pages = {
     ]
 };
 
-export default pages;
+export default operation;

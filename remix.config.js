@@ -25,6 +25,12 @@ module.exports = {
       // /master/dataGridCompany
       route("master/dataGridCompany", "routes/pages/master/dataGridCompany.jsx");
 
+          // /master/dataGridCompany
+      route("master/dataGridOperation", "routes/pages/master/dataGridOperation.jsx");
+      
+          // /master/dataGridCompany
+      route("master/dataGridDayliReport", "routes/pages/master/dataGridDayliReport.jsx");
+
       // /register  (si quieres esta ruta directa)
       route("register", "routes/pages/register/Register3.jsx");
 

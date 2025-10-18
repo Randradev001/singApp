@@ -10,6 +10,8 @@ import MainCard from 'ui-component/cards/MainCard';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import IntegrationInstructionsIcon from '@mui/icons-material/IntegrationInstructions';
 import SearchCompanyFormRHF from 'components/forms/SearchCompanyFormRHF';
 
 
@@ -18,7 +20,7 @@ const columns = [
   {
       field: 'actions',
       headerName: 'Actions',
-      width: 140,
+      width: 250,
       sortable: false,
       filterable: false,
       disableColumnMenu: true,
@@ -44,15 +46,27 @@ const columns = [
             </IconButton>
           </Tooltip>
 
-          <Tooltip title="Delete">
+          <Tooltip title="route generate integration">
+            <IconButton
+              size="small"
+              color='primary'
+              onClick={(e) => { e.stopPropagation(); handleDelete(params.row.id); }}
+            >
+              <IntegrationInstructionsIcon fontSize="small" />
+            </IconButton>
+          </Tooltip>
+
+           <Tooltip title="pdf generate report">
             <IconButton
               size="small"
               color='error'
               onClick={(e) => { e.stopPropagation(); handleDelete(params.row.id); }}
             >
-              <DeleteIcon fontSize="small" />
+              <PictureAsPdfIcon fontSize="small" />
             </IconButton>
           </Tooltip>
+
+
         </Stack>
       ),
     },
@@ -63,45 +77,59 @@ const columns = [
 
 
   {
-    field: 'Company',
-    headerName: 'Company name',
-    width: 250,
+    field: 'date',
+    headerName: 'Report date',
+    flex: 1,          // ocupa espacio flexible
+    minWidth: 100,
     editable: true,
   },
   {
-    field: 'Owner',
-    headerName: 'Administrator name',
+    field: 'cant',
+    headerName: 'Number of works',
     description: 'This column has a value getter and is sortable.',
-    width: 300,
+        flex: 1,          // ocupa espacio flexible
+    minWidth: 100,
   /*  valueGetter: (value, row) => `${row.firstName || ''} ${row.lastName || ''}`,*/
   },
   
   {
-    field: 'Phone',
-    headerName: 'Phone number',
-    width: 200,
+    field: 'kmroad',
+    headerName: 'kilometers to road',
+       flex: 1,          // ocupa espacio flexible
+    minWidth: 100,
     editable: true,
   },
 
     {
-    field: 'Addres',
-    headerName: 'Addres',
-    width: 300,
+    field: 'status',
+    headerName: 'Status',
+        flex: 1,          // ocupa espacio flexible
+    minWidth: 100,
     editable: true,
   },
+
+{
+  field: 'comp',
+  headerName: 'Completed',
+      flex: 1,          // ocupa espacio flexible
+    minWidth: 100,
+  renderCell: ({ value }) => (value ? 'Yes' : 'No')
+}
+
 ];
 
 const rows = [
-  { id: 1, Company: 'ADAM NIESNER', Addres: 'Jon 471 r2g 069', Phone: 123456789, Owner:'Alexander Casas '},
-  { id: 2, Company: 'AL SCHWEITZER', Addres: 'Cersei 471 r2g 069', Phone: 123456789, Owner: 'Alberto mcay ' },
-  { id: 3, Company: 'ANDY SCHMIDT', Addres: 'Jaime 471 r2g 069', Phone: 123456789, Owner: 'Jhon Pritchard ' },
-  { id: 4, Company: 'ANNETTE KATCHAN', Addres: 'Arya 471 r2g 069', Phone: 123456789, Owner: 'Emily Corp ' },
-  { id: 5, Company: 'B.BAUMGARTNER', Addres: 'Daenerys 471 r2g 069', Phone: 123456789, Owner: 'Andres Andrade ' },
-  { id: 6, Company: 'BARRY DUNDAS', Addres: '471 r2g 069', Phone: 123456789, Owner: 'Dylan' },
-  { id: 7, Company: 'BILL RIPPLINGER', Addres: 'Ferrara 471 r2g 069', Phone: 123456789, Owner: 'Franchesca smith ' },
-  { id: 8, Company: 'BIRCHWOOD', Addres: 'Rossini 471 r2g 069', Phone: 123456789, Owner: 'Alex kennedy ' },
-  { id: 9, Company: 'BRENDA HEIBEIN', Addres: 'Harvey 471 r2g 069', Phone: 123456789, Owner: 'Alexander Casas ' },
+  { id: 1,  date: '2025-11-10', cant: 12, kmroad: 18, status: 'Closed',      comp: true  },
+  { id: 2,  date: '2025-11-11', cant:  9, kmroad: 10, status: 'Closed',      comp: true  },
+  { id: 3,  date: '2025-11-12', cant:  7, kmroad: 12, status: 'Closed',      comp: true  },
+  { id: 4,  date: '2025-10-13', cant:  5, kmroad:  8, status: 'Closed',      comp: true  },
+  { id: 5,  date: '2025-10-14', cant:  4, kmroad:  6, status: 'Closed',      comp: true  },
+  { id: 6,  date: '2025-10-15', cant:  6, kmroad: 14, status: 'Closed',      comp: true  },
+  { id: 7,  date: '2025-10-16', cant:  3, kmroad:  9, status: 'In progress', comp: false },
+  { id: 8,  date: '2025-10-17', cant:  2, kmroad: 22, status: 'Open',        comp: false },
+  { id: 9,  date: '2025-10-18', cant:  1, kmroad:  5, status: 'Open',        comp: false },
 ];
+
 
 export default function DataGridCompany() {
   return (

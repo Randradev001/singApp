@@ -39,7 +39,7 @@ const BajajAreaChartCard = () => {
                     <Grid container alignItems="center" justifyContent="space-between">
                         <Grid item>
                             <Typography variant="subtitle1" sx={{ color: theme.palette.secondary.dark }}>
-                                Bajaj Finery
+                               SOLD BY CUSTOMER
                             </Typography>
                         </Grid>
                         <Grid item>
@@ -51,7 +51,7 @@ const BajajAreaChartCard = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <Typography variant="subtitle2" sx={{ color: theme.palette.grey[800] }}>
-                        10% Profit
+                        10% MORE THAN LAST MONTH
                     </Typography>
                 </Grid>
             </Grid>
