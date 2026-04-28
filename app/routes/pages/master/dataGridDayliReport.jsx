@@ -133,7 +133,7 @@ const rows = [
 
 export default function DataGridCompany() {
   return (
-    <MainCard title="Company list">
+    <MainCard title="Report and integration daily works">
        <SearchCompanyFormRHF />
        <Box sx={{ height: 400, width: '100%' }}>
       <DataGrid

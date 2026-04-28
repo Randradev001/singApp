@@ -9,7 +9,7 @@ import operation from './operations';
 // ==============================|| MENU ITEMS ||============================== //
 
 const menuItems = {
-    items: [dashboard , pages ,operation, reports/* , utilities, other */ ]
+    items: [dashboard , pages ,operation, reports  /* , other */ ]
 };
 
 export default menuItems;
